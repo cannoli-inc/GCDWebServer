@@ -362,13 +362,11 @@ static void _ExecuteMainThreadRunLoopSources() {
 }
 
 - (void)addHandlerWithMatchBlock:(GCDWebServerMatchBlock)matchBlock asyncProcessBlock:(GCDWebServerAsyncProcessBlock)processBlock {
-  GWS_DCHECK(_options == nil);
   GCDWebServerHandler* handler = [[GCDWebServerHandler alloc] initWithMatchBlock:matchBlock asyncProcessBlock:processBlock];
   [_handlers insertObject:handler atIndex:0];
 }
 
 - (void)removeAllHandlers {
-  GWS_DCHECK(_options == nil);
   [_handlers removeAllObjects];
 }
 
